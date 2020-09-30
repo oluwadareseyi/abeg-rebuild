@@ -1,8 +1,13 @@
 // general styles for all the sections.
 
 .all-sections {
+    position: relative;
+
     section {
+        position: absolute;
         min-height: 100vh;
+        max-height: 100vh;
+        width: 100%;
         overflow: hidden;
         display: flex;
         justify-content: center;

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import React, { useState, useEffect } from "react";
 import Section1 from "../components/Section1";
 import Section2 from "../components/Section2";
 import Section3 from "../components/Section3";
@@ -17,10 +18,36 @@ const SECTIONS = {
 
 const Landing = () => {
   const [activeSection, setActiveSection] = useState(1);
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = (e) => {
+      if (isScrolling) return;
+      if (e.deltaY > 0) {
+        if (activeSection === 6) return;
+        setActiveSection(activeSection + 1);
+        console.log("scrolling up");
+      } else {
+        if (activeSection <= 1) return;
+        setActiveSection((state) => state - 1);
+      }
+      setIsScrolling(true);
+      setTimeout(() => {
+        setIsScrolling(false);
+      }, 1000);
+    };
+    window.addEventListener("wheel", handleScroll);
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+    };
+  }, [activeSection, isScrolling]);
   return (
     <div className="landing">
       <nav></nav>
-      <div className="all-sections">{SECTIONS[activeSection]}</div>
+      <AnimatePresence exitBeforeEnter>
+        <div className="all-sections">{SECTIONS[activeSection]}</div>
+      </AnimatePresence>
     </div>
   );
 };
