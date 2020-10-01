@@ -1,12 +1,23 @@
 // general styles for all the sections.
 
+.landing {
+    position: relative;
+}
+
+.pd-10 {
+    padding: 0 10%;
+}
+
 .all-sections {
     position: relative;
 
     section {
+        padding: 0 10%;
         position: absolute;
         min-height: 100vh;
         max-height: 100vh;
+        top: 0;
+        left: 0;
         width: 100%;
         overflow: hidden;
         display: flex;
@@ -21,7 +32,86 @@
     left: 0;
     height: 100vh;
     background: url('../../assets/images/line-bg.svg') 50% repeat;
-    width: 160vw;
-    background-size: 160%;
-    // transform: translate(-6.6667%, 0px);
+    width: 170vw;
+    background-size: 170%;
+}
+
+.indicator-con {
+    position: fixed;
+    width: 100%;
+    bottom: 30px;
+    left: 0;
+
+    .inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 18px;
+        width: 100%;
+    }
+
+    .balls {
+        position: absolute;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .ball {
+            width: 5px;
+            height: 5px;
+            position: relative;
+            position: relative;
+            width: 12px;
+            height: 12px;
+            border-radius: 10px;
+            background-color: lighten($blue, 20%);
+            border: 3px solid darken($blue, 10%);
+            cursor: pointer;
+            transition: all .5s ease-in;
+
+            &::after {
+                content: attr(data-num);
+                color: $yellow;
+                white-space: nowrap;
+                position: absolute;
+                font-size: 8px;
+                font-weight: 600;
+                top: -18px;
+                left: -1.5px;
+                transition: all, 1s ease-in;
+                transform: translate(0, 20px);
+                opacity: 0;
+            }
+        }
+
+        .ball.active {
+            background-color: $yellow;
+        }
+
+        .ball.active-num {
+            &::after {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+    }
+
+    .line {
+        width: 100%;
+        position: relative;
+        background: lighten($blue, 30%);
+        height: 1px;
+        z-index: -2;
+    }
+
+    .line-scroll {
+        // width: 100%;
+        position: absolute;
+        background: $yellow;
+        height: 1.2px;
+        z-index: -1;
+        transition: all 1s ease-in;
+    }
 }

@@ -23,8 +23,8 @@ const Landing = () => {
 
   useEffect(() => {
     gsap.to(".line-bg", {
-      duration: 4,
-      x: `-${8 * activeSection}%`,
+      duration: 3,
+      x: `-${6.67 * activeSection}%`,
       ease: "Elastic.easeOut",
     });
     const handleScroll = (e) => {
@@ -57,6 +57,28 @@ const Landing = () => {
       <AnimatePresence exitBeforeEnter>
         <div className="all-sections">{SECTIONS[activeSection]}</div>
       </AnimatePresence>
+
+      <div className="indicator-con pd-10">
+        <div className="inner">
+          <div className="balls">
+            {[...new Array(6)].map((_, i) => (
+              <div
+                key={i}
+                className={`ball ball-${i + 1} ${
+                  i + 1 <= activeSection ? "active" : ""
+                } ${1 + i === activeSection ? "active-num" : ""}`}
+                data-num={`0${i + 1}`}
+              ></div>
+            ))}
+          </div>
+
+          <div className="line"></div>
+          <div
+            className="line-scroll"
+            style={{ width: `${(activeSection - 1) * 20}%` }}
+          ></div>
+        </div>
+      </div>
     </div>
   );
 };

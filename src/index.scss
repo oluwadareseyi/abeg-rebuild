@@ -1,11 +1,26 @@
+// Resets
+* {
+    box-sizing: border-box;
+
+    &::before,
+    &::after {
+        box-sizing: border-box;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 body {
     margin: 0;
-    background: #1789FC;
+    background: #166fc9;
     color: #ffffff;
     font-family: "Eina", sans-serif;
 }
 
-
+// Fonts
 @font-face {
     font-family: 'Eina';
     src: url('./assets/fonts/eina01-regular-webfont.57ac5b4b.woff2') format('woff2');
