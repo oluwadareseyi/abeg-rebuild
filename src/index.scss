@@ -1,3 +1,31 @@
 body {
     margin: 0;
+    background: #1789FC;
+    color: #ffffff;
+    font-family: "Eina", sans-serif;
+}
+
+
+@font-face {
+    font-family: 'Eina';
+    src: url('./assets/fonts/eina01-regular-webfont.57ac5b4b.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Eina';
+    src: url('./assets/fonts/eina01-semibold-webfont.93d21e16.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Eina';
+    src: url('./assets/fonts/eina01-bold-webfont.17ecfa75.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
 }

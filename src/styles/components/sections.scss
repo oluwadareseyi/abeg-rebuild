@@ -14,3 +14,14 @@
         align-items: center;
     }
 }
+
+.line-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: url('../../assets/images/line-bg.svg') 50% repeat;
+    width: 160vw;
+    background-size: 160%;
+    // transform: translate(-6.6667%, 0px);
+}

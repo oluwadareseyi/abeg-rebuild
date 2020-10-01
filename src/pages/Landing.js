@@ -1,4 +1,5 @@
 import { AnimatePresence } from "framer-motion";
+import gsap from "gsap";
 import React, { useState, useEffect } from "react";
 import Section1 from "../components/Section1";
 import Section2 from "../components/Section2";
@@ -21,20 +22,27 @@ const Landing = () => {
   const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
+    gsap.to(".line-bg", {
+      duration: 4,
+      x: `-${8 * activeSection}%`,
+      ease: "Elastic.easeOut",
+    });
     const handleScroll = (e) => {
       if (isScrolling) return;
-      if (e.deltaY > 0) {
+      if (e.deltaY > 0 || e.deltaY === -0) {
         if (activeSection === 6) return;
+        setIsScrolling(true);
         setActiveSection(activeSection + 1);
         console.log("scrolling up");
       } else {
         if (activeSection <= 1) return;
+        setIsScrolling(true);
         setActiveSection((state) => state - 1);
       }
-      setIsScrolling(true);
+
       setTimeout(() => {
         setIsScrolling(false);
-      }, 1000);
+      }, 2000);
     };
     window.addEventListener("wheel", handleScroll);
 
@@ -45,6 +53,7 @@ const Landing = () => {
   return (
     <div className="landing">
       <nav></nav>
+      <div className="line-bg"></div>
       <AnimatePresence exitBeforeEnter>
         <div className="all-sections">{SECTIONS[activeSection]}</div>
       </AnimatePresence>
