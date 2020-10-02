@@ -33,7 +33,6 @@ const Landing = () => {
         if (activeSection === 6) return;
         setIsScrolling(true);
         setActiveSection(activeSection + 1);
-        console.log("scrolling up");
       } else {
         if (activeSection <= 1) return;
         setIsScrolling(true);
@@ -52,12 +51,21 @@ const Landing = () => {
   }, [activeSection, isScrolling]);
   return (
     <div className="landing">
-      <nav></nav>
-      <div className="line-bg"></div>
-      <AnimatePresence exitBeforeEnter>
-        <div className="all-sections">{SECTIONS[activeSection]}</div>
-      </AnimatePresence>
+      <nav>
+        <div className="logo">Anon</div>
+      </nav>
 
+      {/* The line background that has an elastic effect on scroll */}
+      <div className="line-bg"></div>
+
+      {/* Section mounts/unmounts based on state */}
+      <div className="all-sections">
+        <AnimatePresence exitBeforeEnter>
+          <div key={activeSection}>{SECTIONS[activeSection]}</div>
+        </AnimatePresence>
+      </div>
+
+      {/* Scroll indicator */}
       <div className="indicator-con pd-10">
         <div className="inner">
           <div className="balls">

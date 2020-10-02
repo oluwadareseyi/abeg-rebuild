@@ -4,6 +4,7 @@ import React from "react";
 const Section3 = () => {
   return (
     <motion.section
+      key="three"
       exit={{ opacity: 0 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
