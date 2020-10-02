@@ -65,10 +65,10 @@ const Section2 = () => {
             transition={{ ...transition, delay: 0.1 }}
             className="buttons"
           >
-            <div className="button">
+            <div className="button button-txt">
               <div className="coming">Withdraw your cash</div>
             </div>
-            <div className="button">
+            <div className="button button-txt">
               <div className="coming">Fund your wallet</div>
             </div>
           </motion.div>

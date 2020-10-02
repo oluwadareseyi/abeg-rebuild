@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import React from "react";
 import { transition } from "../utils";
 
+const spring = { type: "spring", bounce: 0.7, stiffness: 200, duration: 0.5 };
+
 const sectionVariant = {
   hidden: {
     opacity: 0,
@@ -28,6 +30,105 @@ const titleVariant = {
   },
 };
 
+const bubble1 = {
+  hidden: {
+    scale: 0,
+  },
+  visible: {
+    scale: 1,
+    transition: { ...spring },
+  },
+  leave: {
+    scale: 0.5,
+    opacity: 0,
+    transition: { ...spring, duration: 0.7 },
+  },
+};
+
+const bubble2 = {
+  hidden: {
+    scale: 0,
+    x: 140,
+    y: 140,
+  },
+  visible: {
+    scale: 1,
+    x: 140,
+    y: 140,
+    transition: { ...spring, delay: 0.1 },
+  },
+  leave: {
+    scale: 0.5,
+    x: 140,
+    opacity: 0,
+    y: 140,
+    transition: { ...spring, delay: 0.1, duration: 0.7 },
+  },
+};
+
+const bubble3 = {
+  hidden: {
+    scale: 0,
+    x: -140,
+    y: -140,
+  },
+  visible: {
+    scale: 1,
+    x: -140,
+    y: -140,
+    transition: { ...spring, delay: 0.2 },
+  },
+  leave: {
+    scale: 0.5,
+    x: -140,
+    opacity: 0,
+    y: -140,
+    transition: { ...spring, delay: 0.2, duration: 0.7 },
+  },
+};
+
+const bubble4 = {
+  hidden: {
+    scale: 0,
+    x: 140,
+    y: -140,
+  },
+  visible: {
+    scale: 1,
+    x: 140,
+    y: -140,
+    transition: { ...spring, delay: 0.3 },
+  },
+  leave: {
+    scale: 0.5,
+    opacity: 0,
+    x: 140,
+    y: -140,
+    transition: { ...spring, delay: 0.3, duration: 0.7 },
+  },
+};
+
+const bubble5 = {
+  hidden: {
+    scale: 0,
+    x: -140,
+    y: 140,
+  },
+  visible: {
+    scale: 1,
+    x: -140,
+    y: 140,
+    transition: { ...spring, delay: 0.4 },
+  },
+  leave: {
+    scale: 0.5,
+    opacity: 0,
+    x: -140,
+    y: 140,
+    transition: { ...spring, delay: 0.4, duration: 0.7 },
+  },
+};
+
 const Section1 = () => {
   return (
     <motion.section
@@ -38,7 +139,7 @@ const Section1 = () => {
       animate="visible"
       transition={{ ...transition }}
     >
-      <div className="section-inner">
+      <div className="section-inner section-1">
         <div className="left">
           <div className="title">
             <span>
@@ -85,7 +186,29 @@ const Section1 = () => {
             </div>
           </motion.div>
         </div>
-        <div className="right"></div>
+
+        <div className="right">
+          <motion.div
+            variants={bubble1}
+            className="circle circle-1"
+          ></motion.div>
+          <motion.div
+            variants={bubble2}
+            className="circle circle-2"
+          ></motion.div>
+          <motion.div
+            variants={bubble3}
+            className="circle circle-3"
+          ></motion.div>
+          <motion.div
+            variants={bubble4}
+            className="circle circle-4"
+          ></motion.div>
+          <motion.div
+            variants={bubble5}
+            className="circle circle-5"
+          ></motion.div>
+        </div>
       </div>
     </motion.section>
   );
