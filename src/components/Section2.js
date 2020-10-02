@@ -38,7 +38,7 @@ const Section2 = () => {
       animate="visible"
       transition={{ ...transition }}
     >
-      <div className="section-inner">
+      <div className="section-inner section-2">
         <div className="left">
           <div className="title">
             <span>
@@ -47,17 +47,7 @@ const Section2 = () => {
                 transition={{ ...transition, delay: 0.1 }}
                 className="hide-text"
               >
-                <span>Make Someone</span>
-              </motion.span>
-            </span>
-            <br />
-            <span>
-              <motion.span
-                variants={titleVariant}
-                transition={{ ...transition, delay: 0.2 }}
-                className="hide-text"
-              >
-                <span>Happy With Cash</span>
+                <span>Digitally Kick A**</span>
               </motion.span>
             </span>
           </div>
@@ -66,8 +56,8 @@ const Section2 = () => {
             transition={{ ...transition, delay: 0.1 }}
             className="sub"
           >
-            Do you want to pay for the food you ordered for a friend, send money
-            to your babe or friends? use Anon.
+            With Anon you get a digital wallet that can be funded by a transfer
+            from any bank.
           </motion.div>
 
           <motion.div
@@ -76,12 +66,10 @@ const Section2 = () => {
             className="buttons"
           >
             <div className="button">
-              <div className="coming">Coming soon</div>
-              <div className="app">App Store</div>
+              <div className="coming">Withdraw your cash</div>
             </div>
             <div className="button">
-              <div className="coming">Coming soon</div>
-              <div className="app">Google Play</div>
+              <div className="coming">Fund your wallet</div>
             </div>
           </motion.div>
         </div>

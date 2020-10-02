@@ -8,12 +8,14 @@
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 10;
 
         .logo {
             font-family: 'Poppins', sans-serif;
             font-style: italic;
             font-weight: 600;
             font-size: 29px;
+            cursor: pointer;
         }
     }
 }
@@ -38,66 +40,68 @@
         align-items: center;
     }
 
-    .section-inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
 
-        .left {
-            flex: 0 0 50%;
-            max-width: 50%;
+}
 
-            .title {
-                font-weight: 600;
-                font-size: 7.5vmin;
-                position: relative;
-                line-height: 1.1;
+// General styling for the sections.
+.section-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left {
+        flex: 0 0 50%;
+        max-width: 50%;
+
+        .title {
+            font-weight: 600;
+            font-size: 2.9em;
+            position: relative;
+            line-height: 1.1;
+            display: inline-block;
+            margin-bottom: 30px;
+
+            >span {
+                overflow: hidden;
                 display: inline-block;
-                margin-bottom: 30px;
 
-                >span {
+                .hide-text {
+                    position: relative;
                     overflow: hidden;
-                    display: inline-block;
-
-                    .hide-text {
-                        position: relative;
-                        overflow: hidden;
-                        // transform: translate(0px, 50px);
-                        display: block;
-                        will-change: transform;
-                    }
+                    display: block;
+                    will-change: transform;
                 }
             }
+        }
 
-            .sub {
-                // padding-right: 150px;
-                max-width: 90%;
-                opacity: 0.6;
-                font-size: 18px;
-                line-height: 1.7;
-                margin-bottom: 30px;
-            }
+        .sub {
+            // padding-right: 150px;
+            max-width: 90%;
+            opacity: 0.6;
+            font-size: 1.15em;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
 
-            .buttons {
-                display: flex;
+        .buttons {
+            display: flex;
 
-                .button {
-                    background: darken($blue, 3%);
-                    padding: 13px 40px;
-                    border-radius: 12px;
-                    font-weight: 400;
+            .button {
+                background: darken($blue, 3%);
+                padding: 13px 40px;
+                border-radius: 12px;
+                font-weight: 400;
 
-                    .coming {
-                        font-size: 10px;
-                    }
+                .coming {
+                    font-size: .65em;
+                }
 
-                    .app {
-                        font-weight: 600;
-                    }
+                .app {
+                    font-weight: 600;
+                }
 
-                    &:first-of-type {
-                        margin-right: 30px;
-                    }
+                &:first-of-type {
+                    margin-right: 30px;
                 }
             }
         }

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
+@import './styles/breakpoints.scss';
 
 // Resets
 * {
@@ -20,6 +21,11 @@ body {
     background: #166fc9;
     color: #ffffff;
     font-family: "Eina", sans-serif;
+    font-size: 16px;
+
+    @include media("<=1200px") {
+        font-size: 14px;
+    }
 }
 
 // Fonts
