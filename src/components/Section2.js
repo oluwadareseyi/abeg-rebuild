@@ -11,7 +11,7 @@ const sectionVariant = {
   },
   leave: {
     opacity: 0,
-    transition: { ...transition, delay: 0.9 },
+    transition: { ...transition, delay: 0.5 },
   },
 };
 
@@ -24,7 +24,7 @@ const titleVariant = {
   },
   leave: {
     y: 50,
-    transition: { ...transition, delay: 0.9 },
+    transition: { ...transition, delay: 0.5 },
   },
 };
 
@@ -43,10 +43,10 @@ const imageVariant = {
     opacity: 0,
     transition: {
       ...transition,
-      duration: 1,
+      duration: 0.7,
       type: "spring",
       bounce: 0.2,
-      delay: 0.7,
+      delay: 0.5,
     },
   },
 };

@@ -73,8 +73,6 @@
     }
 
     .right {
-        flex: 0 0 50%;
-        max-width: 50%;
         display: flex;
         align-items: flex-end;
 
@@ -100,7 +98,108 @@
         max-width: 53%;
 
         .title {
-            line-height: 1.2;
+            line-height: 1.15;
+        }
+
+        .sub {
+            // max-width: 360px;
+        }
+    }
+
+    .right {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        position: relative;
+
+        .right-bg {
+            overflow: hidden;
+            height: 460px;
+            background: lighten($blue, 3%);
+            text-align: center;
+            width: 90%;
+            border-radius: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+
+            .phone {
+                position: absolute;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                z-index: 1;
+
+                img {
+                    position: absolute;
+                    width: 80%;
+                    top: -2em;
+                }
+            }
+
+            .circle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                top: -3.5em;
+
+                .inner-circle {
+                    transform-origin: center center;
+                    position: absolute;
+                    border: 1px solid $white;
+                    border-radius: 100%;
+                }
+            }
+
+            .bell-con {
+                .fas {
+                    position: absolute;
+                    padding: 20px;
+                    font-size: 1.3em;
+                    background: lighten($blue, 10%);
+                    border-radius: 100%;
+
+                }
+            }
+
+            .circle-1 {
+                opacity: 0.5;
+            }
+
+            .circle-2 {
+                opacity: 0.4;
+            }
+
+            .circle-3 {
+                opacity: 0.3;
+            }
+
+            .circle-4 {
+                opacity: 0.2;
+            }
+
+            .circle-1 .inner-circle {
+                width: 7.5em;
+                height: 7.5em;
+            }
+
+            .circle-2 .inner-circle {
+                width: 15em;
+                height: 15em;
+            }
+
+            .circle-3 .inner-circle {
+                width: 22em;
+                height: 22em;
+            }
+
+            .circle-4 .inner-circle {
+                width: 30em;
+                height: 30em;
+            }
         }
     }
 }

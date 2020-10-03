@@ -28,6 +28,110 @@ const titleVariant = {
   },
 };
 
+const imageVariant = {
+  hidden: {
+    y: 100,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      ...transition,
+      duration: 1,
+      type: "spring",
+      bounce: 0.4,
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+  leave: {
+    y: 100,
+    opacity: 0,
+    transition: {
+      ...transition,
+      duration: 0.5,
+      type: "spring",
+      bounce: 0.1,
+      delay: 0.2,
+      staggerChildren: 0.05,
+    },
+  },
+};
+
+const circleVariant = {
+  hidden: {
+    scale: 0,
+    opacity: 0,
+    y: 20,
+    x: 20,
+    z: 20,
+  },
+  visible: {
+    scale: 1,
+    x: 0,
+    y: 0,
+    z: 0,
+    opacity: 1,
+    transition: {
+      type: "tween",
+      ease: "easeOut",
+      duration: 0.5,
+    },
+  },
+  leave: {
+    scale: 0,
+    opacity: 0,
+    transition: {
+      duration: 0.01,
+    },
+  },
+};
+
+const bellVariant = {
+  hidden: {
+    scale: 0,
+    opacity: 0,
+    rotate: -380,
+  },
+  visible: {
+    scale: 1,
+    rotate: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.6,
+    },
+  },
+  leave: {
+    scale: 0,
+    rotate: -380,
+    opacity: 0,
+    transition: {
+      duration: 0.01,
+    },
+  },
+};
+
+const phoneVariant = {
+  hidden: {
+    y: 50,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.4,
+    },
+  },
+  leave: {
+    y: 50,
+    opacity: 0,
+  },
+};
+
 const Section3 = () => {
   return (
     <motion.section
@@ -89,7 +193,43 @@ const Section3 = () => {
             </div>
           </motion.div>
         </div>
-        <div className="right"></div>
+        <div className="right">
+          <motion.div variants={imageVariant} className="right-bg">
+            <motion.div variants={phoneVariant} className="phone">
+              <img
+                src="https://abeg.app/static/media/lock-screen.50390647.png"
+                alt=""
+              />
+            </motion.div>
+            <motion.div variants={bellVariant} className="circle bell-con">
+              <i class="fas fa-bell"></i>
+            </motion.div>
+            <div className="circle circle-1">
+              <motion.div
+                variants={circleVariant}
+                className="inner-circle"
+              ></motion.div>
+            </div>
+            <div className="circle circle-2">
+              <motion.div
+                variants={circleVariant}
+                className="inner-circle"
+              ></motion.div>
+            </div>
+            <div className="circle circle-3">
+              <motion.div
+                variants={circleVariant}
+                className="inner-circle"
+              ></motion.div>
+            </div>
+            <div className="circle circle-4">
+              <motion.div
+                variants={circleVariant}
+                className="inner-circle"
+              ></motion.div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </motion.section>
   );
