@@ -4,13 +4,11 @@
     .left {
         .sub {
             max-width: 75%;
-
         }
     }
 
     .right {
-        flex: 0 0 50%;
-        max-width: 50%;
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -61,12 +59,37 @@
 
 .section-2 {
     .left {
-        flex: 0 0 60%;
-        max-width: 60%;
+        flex: 0 0 50%;
+        max-width: 50%;
 
         .title {
             line-height: 1.3;
             margin-bottom: 20px;
+        }
+
+        .sub {
+            max-width: 360px;
+        }
+    }
+
+    .right {
+        flex: 0 0 50%;
+        max-width: 50%;
+        display: flex;
+        align-items: flex-end;
+
+        .right-bg {
+            overflow: hidden;
+            height: 460px;
+            background: lighten($blue, 3%);
+            text-align: center;
+            padding: 130px 20px;
+            width: 90%;
+            border-radius: 2em;
+
+            img {
+                width: 87%;
+            }
         }
     }
 }

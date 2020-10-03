@@ -11,7 +11,7 @@ const sectionVariant = {
   },
   leave: {
     opacity: 0,
-    transition: { ...transition, delay: 0.7 },
+    transition: { ...transition, delay: 0.9 },
   },
 };
 
@@ -24,7 +24,24 @@ const titleVariant = {
   },
   leave: {
     y: 50,
-    transition: { ...transition, delay: 0.7 },
+    transition: { ...transition, delay: 0.9 },
+  },
+};
+
+const imageVariant = {
+  hidden: {
+    y: 100,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { ...transition, duration: 0.7 },
+  },
+  leave: {
+    y: 100,
+    opacity: 0,
+    transition: { ...transition, duration: 0.7, delay: 0.7 },
   },
 };
 
@@ -73,7 +90,14 @@ const Section2 = () => {
             </div>
           </motion.div>
         </div>
-        <div className="right"></div>
+        <div className="right">
+          <motion.div variants={imageVariant} className="right-bg">
+            <img
+              src="https://abeg.app/static/media/phone-wallet.f67dfaf4.png"
+              alt="phone"
+            />
+          </motion.div>
+        </div>
       </div>
     </motion.section>
   );
