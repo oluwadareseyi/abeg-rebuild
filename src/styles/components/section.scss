@@ -100,10 +100,6 @@
         .title {
             line-height: 1.15;
         }
-
-        .sub {
-            // max-width: 360px;
-        }
     }
 
     .right {
@@ -111,6 +107,20 @@
         align-items: flex-end;
         justify-content: center;
         position: relative;
+
+        .notification {
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            bottom: -40px;
+            will-change: transform, opacity;
+
+
+            img {
+                width: 62%;
+            }
+        }
 
         .right-bg {
             overflow: hidden;
@@ -124,6 +134,8 @@
             align-items: center;
             text-align: center;
             position: relative;
+            will-change: transform, opacity;
+
 
             .phone {
                 position: absolute;
@@ -131,13 +143,16 @@
                 display: flex;
                 justify-content: center;
                 z-index: 1;
+                will-change: transform, opacity;
 
                 img {
                     position: absolute;
                     width: 80%;
-                    top: -2em;
+                    top: -1.6em;
                 }
             }
+
+
 
             .circle {
                 display: flex;
@@ -151,17 +166,23 @@
                     position: absolute;
                     border: 1px solid $white;
                     border-radius: 100%;
+                    will-change: transform, opacity;
                 }
             }
 
             .bell-con {
+                will-change: transform, opacity;
+
                 .fas {
                     position: absolute;
-                    padding: 20px;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     font-size: 1.3em;
                     background: lighten($blue, 10%);
                     border-radius: 100%;
-
                 }
             }
 
@@ -187,18 +208,18 @@
             }
 
             .circle-2 .inner-circle {
-                width: 15em;
-                height: 15em;
+                width: 14em;
+                height: 14em;
             }
 
             .circle-3 .inner-circle {
-                width: 22em;
-                height: 22em;
+                width: 21em;
+                height: 21em;
             }
 
             .circle-4 .inner-circle {
-                width: 30em;
-                height: 30em;
+                width: 29em;
+                height: 29em;
             }
         }
     }
@@ -210,29 +231,62 @@
 
 
 
+.section-4 {
+    width: 100%;
+    height: 23em;
+    border-radius: 24px;
+    background: darken($blue, 4%);
+    will-change: transform;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    justify-content: space-between;
+    align-items: center;
 
-// @keyframes moveit {
-//     0% {
-//         transform: scale3d(0.96, 0.96, 1);
-//     }
+    .title {
+        font-weight: 500;
+        font-size: 2.2em;
+        will-change: transform;
+    }
 
-//     20% {
-//         transform: scale3d(1.1, 1.1, 1);
-//     }
+    .buttons {
+        display: flex;
+        will-change: transform;
 
-//     40% {
-//         transform: scale3d(0.98, 0.98, 1);
-//     }
+        .button {
+            background: $white;
+            color: $blue;
+            padding: 12px 22px;
+            border-radius: 12px;
+            font-weight: 400;
+            width: 9em;
+            display: flex;
+            flex-direction: column;
 
-//     60% {
-//         transform: scale3d(1.05, 1.05, 1);
-//     }
+            .coming {
+                font-size: .65em;
+            }
 
-//     80% {
-//         transform: scale3d(1.01, 1.01, 1);
-//     }
+            .app {
+                font-weight: 600;
+            }
 
-//     100% {
-//         transform: scale3d(1, 1, 1);
-//     }
-// }
+            &:first-of-type {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    img {
+        width: 40%;
+        will-change: transform;
+    }
+}
+
+.section-5 {
+    justify-content: center;
+    font-weight: 500;
+    font-size: 2.5em;
+
+}

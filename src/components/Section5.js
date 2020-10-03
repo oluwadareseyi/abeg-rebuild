@@ -1,16 +1,37 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { transition } from "../utils";
+
+const sectionVariant = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+  leave: {
+    opacity: 0,
+    y: 50,
+    transition: { ...transition, delay: 0.7 },
+  },
+};
 
 const Section5 = () => {
   return (
-    <motion.section
-      key="five"
-      exit={{ opacity: 0 }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-    >
-      Section 5
-    </motion.section>
+    <section className="section-5">
+      <motion.div
+        key="five"
+        variants={sectionVariant}
+        exit="leave"
+        initial="hidden"
+        animate="visible"
+        transition={{ ...transition }}
+      >
+        Abeg, I don try, na clone.
+      </motion.div>
+    </section>
   );
 };
 

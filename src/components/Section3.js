@@ -11,7 +11,7 @@ const sectionVariant = {
   },
   leave: {
     opacity: 0,
-    transition: { ...transition, delay: 0.7 },
+    transition: { ...transition, delay: 0.5 },
   },
 };
 
@@ -24,7 +24,7 @@ const titleVariant = {
   },
   leave: {
     y: 50,
-    transition: { ...transition, delay: 0.7 },
+    transition: { ...transition, delay: 0.5 },
   },
 };
 
@@ -83,6 +83,7 @@ const circleVariant = {
     scale: 0,
     opacity: 0,
     transition: {
+      delay: 0.1,
       duration: 0.01,
     },
   },
@@ -110,6 +111,7 @@ const bellVariant = {
     opacity: 0,
     transition: {
       duration: 0.01,
+      delay: 0.1,
     },
   },
 };
@@ -129,6 +131,25 @@ const phoneVariant = {
   leave: {
     y: 50,
     opacity: 0,
+    delay: 0.1,
+  },
+};
+
+const notVariant = {
+  hidden: {
+    y: 50,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.8,
+    },
+  },
+  leave: {
+    opacity: 0,
+    delay: 0.1,
   },
 };
 
@@ -194,6 +215,12 @@ const Section3 = () => {
           </motion.div>
         </div>
         <div className="right">
+          <motion.div variants={notVariant} className="notification">
+            <img
+              src="https://abeg.app/static/media/notification.322758bd.png"
+              alt=""
+            />
+          </motion.div>
           <motion.div variants={imageVariant} className="right-bg">
             <motion.div variants={phoneVariant} className="phone">
               <img
@@ -201,6 +228,7 @@ const Section3 = () => {
                 alt=""
               />
             </motion.div>
+
             <motion.div variants={bellVariant} className="circle bell-con">
               <i class="fas fa-bell"></i>
             </motion.div>
