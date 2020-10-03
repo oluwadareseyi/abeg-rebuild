@@ -36,12 +36,18 @@ const imageVariant = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: { ...transition, duration: 0.7 },
+    transition: { ...transition, duration: 1, type: "spring", bounce: 0.4 },
   },
   leave: {
     y: 100,
     opacity: 0,
-    transition: { ...transition, duration: 0.7, delay: 0.7 },
+    transition: {
+      ...transition,
+      duration: 1,
+      type: "spring",
+      bounce: 0.2,
+      delay: 0.7,
+    },
   },
 };
 

@@ -13,7 +13,7 @@ const sectionVariant = {
   },
   leave: {
     opacity: 0,
-    transition: { ...transition, delay: 0.7 },
+    transition: { ...transition, delay: 1.1 },
   },
 };
 
@@ -26,7 +26,7 @@ const titleVariant = {
   },
   leave: {
     y: 50,
-    transition: { ...transition, delay: 0.7 },
+    transition: { ...transition, delay: 1.1 },
   },
 };
 
@@ -41,7 +41,7 @@ const bubble1 = {
   leave: {
     scale: 0.5,
     opacity: 0,
-    transition: { ...spring, duration: 0.7, bounce: 0.6 },
+    transition: { ...spring, duration: 0.7, delay: 0.7, bounce: 0.6 },
   },
 };
 
@@ -62,7 +62,7 @@ const bubble2 = {
     x: 140,
     opacity: 0,
     y: 140,
-    transition: { ...spring, delay: 0.1, duration: 0.5 },
+    transition: { ...spring, delay: 0.7, duration: 0.5 },
   },
 };
 
@@ -83,7 +83,7 @@ const bubble3 = {
     x: -140,
     opacity: 0,
     y: -140,
-    transition: { ...spring, delay: 0.2, duration: 0.5 },
+    transition: { ...spring, delay: 0.8, duration: 0.5 },
   },
 };
 
@@ -104,7 +104,7 @@ const bubble4 = {
     opacity: 0,
     x: 140,
     y: -140,
-    transition: { ...spring, delay: 0.3, duration: 0.5 },
+    transition: { ...spring, delay: 0.9, duration: 0.5 },
   },
 };
 
@@ -125,7 +125,7 @@ const bubble5 = {
     opacity: 0,
     x: -140,
     y: 140,
-    transition: { ...spring, delay: 0.4, duration: 0.5 },
+    transition: { ...spring, delay: 1, duration: 0.5 },
   },
 };
 
