@@ -99,7 +99,7 @@ const Section2 = () => {
         <div className="right">
           <motion.div variants={imageVariant} className="right-bg">
             <img
-              src="https://abeg.app/static/media/store-shop.66afd853.png"
+              src="https://abeg.app/static/media/p2p-screenshot-1.bc76ac98.png"
               alt="phone"
             />
           </motion.div>
